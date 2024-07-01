@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="kbc.css">
+    <title>KBC</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Function to update the countdown
+        function updateCountdown1() {
+            $.get("/time", function(data) {
+            if(data>0){$(".timer").text(data);}
+            else{
+                $(".timer").text(data);
+                window.location.href='/';
+                alert("Time Out!");
+        }
+                
+            });
+        }
+
+        // Update the countdown every second
+        setInterval(updateCountdown1, 1000);
+    </script>
+    <script>
+        // Function to update the countdown
+        var time=30;
+        function updateCountdown() {
+            if(time<=0){window.location.href='http://127.0.0.1:3000/testing/kbc.html';}
+            $(".timer").text(time);
+            time=time-1;
+        }
+
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+    </script>
+    <script>
+        function help(){
+            if (confirm("Press ok to use the help!")) {
+                txt = "You pressed OK!";
+            } 
+            else {
+                window.history.back();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="kbc.jpg" alt="KBC">
+        </div>
+        <div class="price-sec">
+            <div class="price">
+                <p>70,000,000</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="ques main">
+            <div class="question">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis debitis nostrum eum laborum eaque odit 
+                    incidunt corrupti corporis obcaecati perferendis omnis, minima a labore? Aperiam?</p>
+            </div>
+        </div>
+        <div class="main">
+            <div class="time">
+                <div class="timer">--</div>
+            </div>
+            <div class="option">
+                <a href="http://127.0.0.1:3000/testing/kbc.html"><div class="o o1"><p>1</p></div></a>
+                <a href="/1"><div class="o o2"><p>2</p></div></a>
+                <a href="/1"><div class="o o3"><p>3</p></div></a>
+                <a href="/1"><div class="o o4"><p>4</p></div></a>
+            </div>
+        </div>
+        <div class="help main ques">
+            <a href="/1"><div class="h o"><p>50:50</p></div></a>
+            <a href="/1"><div class="h o"><p>Expert</p></div></a>
+            <a href="/1"><div class="h o"><p>2x</p></div></a>
+            <a href="/1"><div class="h o"><p>Flip</p></div></a>
+        </div>
+    </main>
+    <footer class="main">
+        <p>Thank You! For Playing KBC</p>
+    </footer>
+</body>
+</html>
