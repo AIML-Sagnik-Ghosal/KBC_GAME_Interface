@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         // Function to update the countdown
-        function updateCountdown1() {
+        function updateCountdown() {
             $.get("/time", function(data) {
             if(data>0){$(".timer").text(data);}
             else{
@@ -23,18 +23,6 @@
 
         // Update the countdown every second
         setInterval(updateCountdown1, 1000);
-    </script>
-    <script>
-        // Function to update the countdown
-        var time=30;
-        function updateCountdown() {
-            if(time<=0){window.location.href='http://127.0.0.1:3000/testing/kbc.html';}
-            $(".timer").text(time);
-            time=time-1;
-        }
-
-        // Update the countdown every second
-        setInterval(updateCountdown, 1000);
     </script>
     <script>
         function help(){
@@ -62,8 +50,7 @@
     <main>
         <div class="ques main">
             <div class="question">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis debitis nostrum eum laborum eaque odit 
-                    incidunt corrupti corporis obcaecati perferendis omnis, minima a labore? Aperiam?</p>
+                <p>Where would you like to run this amazing quiz app?</p>
             </div>
         </div>
         <div class="main">
@@ -71,10 +58,10 @@
                 <div class="timer">--</div>
             </div>
             <div class="option">
-                <a href="http://127.0.0.1:3000/testing/kbc.html"><div class="o o1"><p>1</p></div></a>
-                <a href="/1"><div class="o o2"><p>2</p></div></a>
-                <a href="/1"><div class="o o3"><p>3</p></div></a>
-                <a href="/1"><div class="o o4"><p>4</p></div></a>
+                <a href="/1"><div class="o o1"><p>Render: Live Demo</p></div></a>
+                <a href="/1"><div class="o o2"><p>Replit: Fork and Run</p></div></a>
+                <a href="https://github.com/AIML-Sagnik-Ghosal/KBC_GAME"><div class="o o3"><p>Github: Clone and Run</p></div></a>
+                <a href="/1"><div class="o o4"><p>Do Nothing</p></div></a>
             </div>
         </div>
         <div class="help main ques">
